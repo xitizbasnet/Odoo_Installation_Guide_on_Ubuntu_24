@@ -1,10 +1,3 @@
-# Odoo_Installation_Guide_on_Ubuntu_24
-Odoo_Installation_Guide_on_Ubuntu_24
-
-Certainly! Below is a professional documentation format for installing Odoo on Ubuntu 24, which you can present on GitHub. This documentation includes setup steps, installation, and configuration instructions in a structured and clear manner.
-
----
-
 # Odoo Installation Guide on Ubuntu 24
 
 This document provides a step-by-step guide to install and configure Odoo on Ubuntu 24. The instructions include setting up the system dependencies, installing PostgreSQL, configuring the Odoo service, and setting up a virtual environment for Python dependencies.
