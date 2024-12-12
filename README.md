@@ -1,0 +1,2 @@
+# Odoo_Installation_Guide_on_Ubuntu_24
+Odoo_Installation_Guide_on_Ubuntu_24
