@@ -268,3 +268,81 @@ For further customization, you can refer to the official [Odoo documentation](ht
 ---
 
 
+
+
+**Database creation error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL: role "odoo" does not exist 
+**
+```markdown
+# Odoo Setup: Resolving "FATAL: role 'odoo' does not exist" Error
+
+When setting up Odoo on Ubuntu, you may encounter the error:
+
+```
+FATAL: role "odoo" does not exist
+```
+
+This error occurs when PostgreSQL cannot find the `odoo` user required for database operations. To resolve this issue, follow the steps below to create the `odoo` user in PostgreSQL.
+
+## Steps to Resolve the Issue
+
+### 1. Log into PostgreSQL as the `postgres` user:
+
+Open a terminal and log into PostgreSQL using the `postgres` system user:
+
+```bash
+sudo -u postgres psql
+```
+
+### 2. Create the `odoo` role:
+
+Once you're inside the PostgreSQL prompt (`psql`), run the following command to create the `odoo` user with login credentials:
+
+```sql
+CREATE ROLE odoo WITH LOGIN PASSWORD 'odoo';
+```
+
+This creates a PostgreSQL role named `odoo`, with the ability to log in using the password `'odoo'`.
+
+### 3. Grant the necessary permissions to the `odoo` user:
+
+You need to grant the `odoo` user the necessary permission to create databases. Run the following command:
+
+```sql
+ALTER ROLE odoo CREATEDB;
+```
+
+This gives the `odoo` user the permission to create databases, which is essential for Odoo.
+
+### 4. Exit the PostgreSQL prompt:
+
+After creating the role and assigning permissions, exit the PostgreSQL prompt by typing:
+
+```sql
+\q
+```
+
+### 5. Verify the role setup:
+
+To check if the `odoo` role was created successfully, run the following command:
+
+```bash
+sudo -u postgres psql -c "\du"
+```
+
+This will list all PostgreSQL roles, and you should see the `odoo` role listed.
+
+## Additional Tips:
+
+- If you are running Odoo under a specific user, make sure the PostgreSQL role name (`odoo`) matches the username configured for Odoo in your `odoo.conf` file.
+- After creating the PostgreSQL user, restart the Odoo service to apply the changes:
+
+```bash
+sudo systemctl restart odoo
+```
+
+## Conclusion:
+
+By creating the `odoo` role in PostgreSQL and granting it the `CREATEDB` permission, you should be able to resolve the error and successfully set up your Odoo instance.
+```
+
+
