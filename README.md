@@ -18,6 +18,9 @@ Update the system to ensure all packages are up-to-date:
 
 ```bash
 sudo apt-get update
+```
+
+```bash
 sudo apt-get upgrade
 ```
 
@@ -45,6 +48,8 @@ Start and enable the PostgreSQL service:
 
 ```bash
 systemctl start postgresql
+```
+```bash
 systemctl enable postgresql
 ```
 
@@ -68,6 +73,9 @@ Install Node.js and npm to handle JavaScript dependencies:
 
 ```bash
 apt install nodejs npm
+```
+
+```bash
 npm install -g rtlcss
 ```
 
@@ -85,8 +93,17 @@ Odoo requires `wkhtmltopdf` to generate PDF reports. Download and install the `w
 
 ```bash
 wget http://security.ubuntu.com/ubuntu/pool/universe/w/wkhtmltopdf/wkhtmltopdf_0.12.6-2build2_amd64.deb
+```
+
+```bash
 dpkg -i wkhtmltopdf_0.12.6-2build2_amd64.deb
+```
+
+```bash
 apt-get install -f
+```
+
+```bash
 dpkg -i wkhtmltopdf_0.12.6-2build2_amd64.deb
 ```
 
@@ -138,6 +155,9 @@ Install required Python dependencies:
 
 ```bash
 pip3 install wheel
+```
+
+```bash
 pip3 install -r /opt/odoo/odoo/requirements.txt
 ```
 
@@ -145,6 +165,9 @@ Deactivate the virtual environment after installation:
 
 ```bash
 clear
+```
+
+```bash
 deactivate
 ```
 
@@ -156,6 +179,9 @@ Create a directory for custom addons:
 
 ```bash
 mkdir /opt/odoo/custom-addons
+```
+
+```bash
 exit
 ```
 
@@ -167,6 +193,9 @@ Create and set proper ownership for Odoo log files:
 
 ```bash
 mkdir /var/log/odoo18
+```
+
+```bash
 chown odoo:odoo /var/log/odoo18
 ```
 
@@ -233,7 +262,13 @@ Reload the systemd daemon, start Odoo, and enable it to start on boot:
 
 ```bash
 systemctl daemon-reload
+```
+
+```bash
 systemctl start odoo
+```
+
+```bash
 systemctl enable odoo
 ```
 
@@ -251,7 +286,11 @@ Once the Odoo service is running, you can access the Odoo web interface by navig
 
 ```
 http://<your-server-ip>:8069
+```
+
 OR
+
+```
 http://localhost:8069/
 ```
 
