@@ -311,8 +311,7 @@ For further customization, you can refer to the official [Odoo documentation](ht
 
 **Database creation error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL: role "odoo" does not exist 
 **
-
-```markdown
+ 
 # Odoo Setup: Resolving "FATAL: role 'odoo' does not exist" Error
 
 When setting up Odoo on Ubuntu, you may encounter the error:
@@ -321,16 +320,13 @@ FATAL: role "odoo" does not exist
 
 This error occurs when PostgreSQL cannot find the `odoo` user required for database operations. To resolve this issue, follow the steps below to create the `odoo` user in PostgreSQL.
 
-```
 
-```markdown
 ## Steps to Resolve the Issue
 
 1. Log into PostgreSQL as the `postgres` user:
 
 Open a terminal and log into PostgreSQL using the `postgres` system user:
 
-```
 
 ```bash
 sudo -u postgres psql
