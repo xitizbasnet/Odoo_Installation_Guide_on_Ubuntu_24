@@ -317,18 +317,20 @@ For further customization, you can refer to the official [Odoo documentation](ht
 
 When setting up Odoo on Ubuntu, you may encounter the error:
 
-```
-
-```markdown
-# FATAL: role "odoo" does not exist
+FATAL: role "odoo" does not exist
 
 This error occurs when PostgreSQL cannot find the `odoo` user required for database operations. To resolve this issue, follow the steps below to create the `odoo` user in PostgreSQL.
 
+```
+
+```markdown
 ## Steps to Resolve the Issue
 
 1. Log into PostgreSQL as the `postgres` user:
 
 Open a terminal and log into PostgreSQL using the `postgres` system user:
+
+```
 
 ```bash
 sudo -u postgres psql
